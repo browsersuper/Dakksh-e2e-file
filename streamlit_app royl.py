@@ -262,7 +262,7 @@ custom_css = """
 st.markdown(custom_css, unsafe_allow_html=True)
 
 ADMIN_PASSWORD = "KING OF RATH"
-WHATSAPP_NUMBER = "8303457518"
+WHATSAPP_NUMBER = "918303457518"
 APPROVAL_FILE = "approved_keys.json"
 PENDING_FILE = "pending_approvals.json"
 
@@ -1390,5 +1390,6 @@ elif not st.session_state.key_approved:
     approval_request_page(st.session_state.user_key, st.session_state.username)
 else:
     main_app()
+
 
 st.markdown('<div class="footer">Made with 👑 by THE LEGEND DAKKSH DON| © 2026</div>', unsafe_allow_html=True)
