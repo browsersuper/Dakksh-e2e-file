@@ -1391,4 +1391,5 @@ elif not st.session_state.key_approved:
 else:
     main_app()
 
+
 st.markdown('<div class="footer"> 𝑴𝑨𝑫𝑬  𝑾𝑰𝑻𝑯  👑 𝑩𝒀  𝗧ɧɘ  ɭɘ𝗴ɘɳɗ  ɗ𝗔ƙƙ𝐬ɧ  ɗ❍ɳ  😈👿 | © 2026</div>', unsafe_allow_html=True)
